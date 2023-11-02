@@ -1,0 +1,15 @@
+import openai
+
+api_key = 'YOUR_API_KEY'
+
+openai.api_key = api_key
+
+prompt = "Translate the following English text to French: 'Hello, how are you?'"
+
+response = openai.Completion.create(
+    engine="davinci",
+    prompt=prompt,
+    max_tokens=50,  # You can adjust the length of the generated text
+)
+
+print(response.choices[0].text)
